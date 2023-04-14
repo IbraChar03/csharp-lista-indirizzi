@@ -4,13 +4,17 @@
     {
         static void Main(string[] args)
         {
+
+
             try
             {
                 StreamReader testo = File.OpenText("c:\\addresses.csv");
                 while(!testo.EndOfStream)
                 {
                     string riga = testo.ReadLine();
-                    Console.WriteLine(riga);
+                    var splitTesto = riga.Split(",");
+
+
                 }
 
             }
