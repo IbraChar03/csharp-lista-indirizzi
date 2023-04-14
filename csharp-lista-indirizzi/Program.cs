@@ -24,9 +24,20 @@
                     }
                     else
                     {
-                        Indirizzo indirizzo = new Indirizzo((arrayIndirizzo[0] == "" ) ? "Non definito" : arrayIndirizzo[0], (arrayIndirizzo[1] == "") ? "Non definito" : arrayIndirizzo[1], (arrayIndirizzo[2] == "" ) ? "Non definito" : arrayIndirizzo[2], (arrayIndirizzo[3] == "" ) ? "Non definito" : arrayIndirizzo[3], (arrayIndirizzo[4] == "") ? "Non definito" : arrayIndirizzo[4], (arrayIndirizzo[5] == "") ? "Non definito" : arrayIndirizzo[5]);
+                        if (arrayIndirizzo.Contains(""))
+                        {
+                            Indirizzo indirizzoNonValido = new Indirizzo();
 
-                        indirizzi.Add(indirizzo);
+                            indirizziNonValidi.Add(indirizzoNonValido);
+                        }
+                        else
+                        { 
+                            Indirizzo indirizzo = new Indirizzo((arrayIndirizzo[0] == "" ) ? "Non definito" : arrayIndirizzo[0], (arrayIndirizzo[1] == "") ? "Non definito" : arrayIndirizzo[1], (arrayIndirizzo[2] == "" ) ? "Non definito" : arrayIndirizzo[2], (arrayIndirizzo[3] == "" ) ? "Non definito" : arrayIndirizzo[3], (arrayIndirizzo[4] == "") ? "Non definito" : arrayIndirizzo[4], (arrayIndirizzo[5] == "") ? "Non definito" : arrayIndirizzo[5]);
+
+                            indirizzi.Add(indirizzo);
+
+                        }
+                       
                     }
                    
                  
