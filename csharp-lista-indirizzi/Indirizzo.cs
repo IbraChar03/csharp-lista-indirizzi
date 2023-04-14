@@ -24,5 +24,8 @@ namespace csharp_lista_indirizzi
             Provincia = provincia;
             Cap = cap;
         }
+        public Indirizzo() { }
+       
+
     }
 }
