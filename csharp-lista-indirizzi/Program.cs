@@ -13,13 +13,17 @@
                 while(!testo.EndOfStream)
                 {
                     string riga = testo.ReadLine();
-                    var splitTesto = riga.Split(",");
+                   
+                   //string[] arrayIndirizzo = new string[6];
+                    
+                   var arrayIndirizzo = riga.Split(",");
+                    if (arrayIndirizzo.Length == 6)
+                    {
+                         Indirizzo indirizzo = new Indirizzo((arrayIndirizzo[0] == "") ? "Non definito" : arrayIndirizzo[0], (arrayIndirizzo[1] == "") ? "Non definito" : arrayIndirizzo[1], (arrayIndirizzo[2] == "") ? "Non definito" : arrayIndirizzo[2], (arrayIndirizzo[3] == "") ? "Non definito" : arrayIndirizzo[3], (arrayIndirizzo[4] == "") ? "Non definito" : arrayIndirizzo[4], (arrayIndirizzo[5] == "") ? "Non definito" : arrayIndirizzo[5]);
                  
-                    Indirizzo indirizzo = new Indirizzo((splitTesto[0] == "") ? "Non definito" : splitTesto[0], (splitTesto[1] == "") ? "Non definito" : splitTesto[1], (splitTesto[2] == "") ? "Non definito" : splitTesto[2], (splitTesto[3] == "") ? "Non definito" : splitTesto[3], (splitTesto[4] == "") ? "Non definito" : splitTesto[4], (splitTesto[5] == "") ? "Non definito" : splitTesto[5]);
-                    indirizzi.Add(indirizzo);
-
-
-
+                   indirizzi.Add(indirizzo);
+                    }
+                 
                 }
 
             }
@@ -35,6 +39,7 @@
                 Console.WriteLine($"Città : {ind.Città}");
                 Console.WriteLine($"Provincia : {ind.Provincia}");
                 Console.WriteLine($"Cap : {ind.Cap}");
+                
             }
 
         }
